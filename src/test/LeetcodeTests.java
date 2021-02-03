@@ -1,20 +1,22 @@
 package test;
 
-import leetcode.Solution208;
-import leetcode.Solution300;
+import leetcode.*;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class LeetcodeTests {
     public static final int[] arr = new int[] {10, 9, 2, 5, 3, 7, 101, 18};
 
     public static final Solution300 lis = new Solution300();
     public static final Solution208 trie = new Solution208();
+    public static final Solution212 q212 = new Solution212();
 
     public static void main(String[] args) {
         LeetcodeTests testEntity = new LeetcodeTests();
         // testEntity.test300();
-        testEntity.test208();
+        // testEntity.test208();
+        testEntity.test212();
     }
 
     private void test300() {
@@ -29,5 +31,11 @@ public class LeetcodeTests {
         System.out.println(trie.startsWith("app")); // 返回 true
         trie.insert("app");
         System.out.println(trie.search("app")); // 返回 true
+    }
+    private void test212() {
+        char[][] board = {{'o','a','a','n'},{'e','t','a','e'},{'i','h','k','r'},{'i','f','l','v'}};
+        String[] words = {"oath","pea","eat","rain"};
+        List<String> q212Words = q212.findWords(board, words);
+        System.out.println(Arrays.toString(q212Words.toArray()));
     }
 }
